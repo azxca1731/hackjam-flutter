@@ -4,6 +4,7 @@ import 'package:graphql_flutter/graphql_flutter.dart';
 import './config.dart' as config;
 import './pages/login_page.dart';
 import './pages/main_page.dart';
+import './pages/edit_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -31,6 +32,7 @@ class _MyAppState extends State<MyApp> {
       Client(
         endPoint: '${config.endPoint}',
         cache: InMemoryCache(),
+        apiToken: _apikey
       ),
     );
 
@@ -49,6 +51,7 @@ class _MyAppState extends State<MyApp> {
           routes: {
             '/': (BuildContext context) => LoginPage(changeApikey),
             '/main': (BuildContext context) => MainPage(_apikey),
+            '/edit': (BuildContext context) => EditPage(_apikey),
           },
         ),
       ),

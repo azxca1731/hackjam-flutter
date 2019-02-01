@@ -89,14 +89,17 @@ class _LoginPageState extends State<LoginPage> {
         var data,
         Exception error,
       }) {
-        if (data.isNotEmpty) {
-          
+        if (error != null) {
+          return Center(
+            child: Text(error.toString()),
+          );
+        } else {
+          return RaisedButton(
+            textColor: Colors.black38,
+            child: Text('LOGIN'),
+            onPressed: () => _submitForm(authenicate),
+          );
         }
-        return RaisedButton(
-          textColor: Colors.black38,
-          child: Text('LOGIN'),
-          onPressed: () => _submitForm(authenicate),
-        );
       },
     );
   }

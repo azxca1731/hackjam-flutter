@@ -11,7 +11,15 @@ class MainPage extends StatelessWidget {
         title: Text("Hack Jam"),
       ),
       body: Center(
-        child: Text(apiKey),
+        child: Column(
+          children: <Widget>[
+            Text(apiKey),
+            RaisedButton(
+              child: Text('Button'),
+              onPressed: () => Navigator.pushReplacementNamed(context, '/edit'),
+            ),
+          ],
+        ),
       ),
     );
   }
